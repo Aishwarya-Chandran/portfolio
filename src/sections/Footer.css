@@ -14,14 +14,14 @@
   justify-content: space-between;
 }
 
-/* Left text */
+
 .footer-text {
   color: var(--text-color);
   font-size: 0.9rem;
   opacity: 0.85;
 }
 
-/* Right icons */
+
 .footer-icons {
   display: flex;
   gap: 1.2rem;
@@ -38,7 +38,7 @@
   transform: translateY(-3px);
 }
 
-/* Responsive */
+
 @media (max-width: 600px) {
   .footer-inner {
     flex-direction: column;

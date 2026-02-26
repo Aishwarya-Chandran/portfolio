@@ -2,6 +2,7 @@
 
 A clean and responsive developer portfolio to showcase my projects, skills, and contact details.
 
+[View Live Portfolio](https://portfolio-aishwarya-chandran.vercel.app)
 
 ## Features
 - Responsive design   
@@ -15,11 +16,3 @@ A clean and responsive developer portfolio to showcase my projects, skills, and 
 - JavaScript  
 - React / JSX  
 - Vite  
-
-## Installation
-
-```bash
-git clone https://github.com/your-username/portfolio.git
-cd portfolio
-npm install
-npm run dev

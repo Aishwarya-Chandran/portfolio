@@ -11,7 +11,6 @@
   font-weight: 700;
 }
 
-/* GRID */
 .education-wrapper {
   max-width: 1100px;
   margin: auto;
@@ -20,7 +19,7 @@
   gap: 2rem;
 }
 
-/* CARD */
+
 .education-card {
   position: relative;
   background: var(--card-bg);
@@ -29,19 +28,18 @@
   border: 1px solid transparent;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 
-  /* SCROLL ANIMATION */
   animation: fadeUp both;
   animation-timeline: view();
   animation-range: entry 0% cover 35%;
 }
 
-/* LIGHT MODE → SHADOW ONLY (NO BORDER) */
+
 .education-card:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
 }
 
-/* ICON */
+
 .edu-icon {
   width: 55px;
   height: 55px;
@@ -85,7 +83,7 @@
   opacity: 0.9;
 }
 
-/* DARK MODE — BORDER + GLOW SHADOW */
+
 [data-theme="dark"] .education-card {
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -96,7 +94,6 @@
     0 6px 18px rgba(185, 131, 255, 0.25);
 }
 
-/* VIEW ANIMATION */
 @keyframes fadeUp {
   from {
     opacity: 0;

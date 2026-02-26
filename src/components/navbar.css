@@ -1,6 +1,4 @@
-/* =============================
-   BASE VARIABLES
-============================= */
+
 :root {
   --primary: #6366f1;
   --text-light: #0f172a;
@@ -10,9 +8,7 @@
 
 }
 
-/* =============================
-   NAVBAR WRAPPER
-============================= */
+
 .navbar {
   position: fixed;
                 
@@ -26,7 +22,7 @@
   transition: all 0.35s ease;
 }
 
-/* inner alignment */
+
 .nav-inner {
   width: 100%;
    padding-top: 16px !important;
@@ -37,9 +33,7 @@
   justify-content: space-between;
 }
 
-/* =============================
-   LOGO (OUTSIDE PILL)
-============================= */
+
 .logo {
   font-family: "Sofia", sans-serif;
   font-size: 2rem;
@@ -50,9 +44,6 @@
   flex-shrink: 0;
 }
 
-/* =============================
-   CENTER NAV PILL
-============================= */
 .nav-pill {
   display: flex;
   align-items: center;
@@ -67,20 +58,20 @@
   transition: all 0.35s ease;
 }
 
-/* LIGHT THEME */
+
 [data-theme="light"] .nav-pill {
-  background: transparent;   /* ✅ removed */
+  background: transparent;   
   box-shadow: 0 10px 28px rgba(0,0,0,0.12);
 }
 
 [data-theme="dark"] .nav-pill {
-  background: transparent;   /* ✅ removed */
+  background: transparent;   
 border: 1px solid rgba(255,255,255,0.14);
   box-shadow: none;
 }
 
 
-/* pill links */
+
 .nav-pill a {
   text-decoration: none;
   font-size: 0.95rem;
@@ -92,9 +83,7 @@ border: 1px solid rgba(255,255,255,0.14);
   color: var(--text-dark);
 }
 
-/* =============================
-   RIGHT ACTIONS
-============================= */
+
 .nav-actions {
   display: flex;
   align-items: center;
@@ -102,7 +91,6 @@ border: 1px solid rgba(255,255,255,0.14);
   flex-shrink: 0;
 }
 
-/* theme toggle */
 .theme-toggle {
   background: none !important;
   border: none;
@@ -123,7 +111,7 @@ border: 1px solid rgba(255,255,255,0.14);
 }
 
 
-/* contact button */
+
 .contact-btn {
   height: 50px;
   width: 150px;
@@ -142,15 +130,15 @@ border: 1px solid rgba(255,255,255,0.14);
 .contact-btn svg{
     font-size: 1.5rem;
 }
-/* LIGHT THEME */
+
 [data-theme="light"] .contact-btn {
   background: transparent;
   color: var(--primary);
 }
 
-/* DARK THEME */
+
 [data-theme="dark"] .contact-btn {
-  background: rgba(99,102,241,0.15); /* soft primary tint */
+  background: rgba(99,102,241,0.15); 
   color: #fff;
   border-color: rgba(99,102,241,0.6);
 }
@@ -159,44 +147,36 @@ border: 1px solid rgba(255,255,255,0.14);
   color: #fff;
 }
 
-/* =============================
-   SCROLL STATE
-============================= */
-/* REMOVE pill completely when scrolled */
-/* SCROLL STATE — remove pill look but keep content */
+
 .navbar.scrolled .nav-pill {
   box-shadow: none !important;
   border: none !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  padding: 0;                /* important */
+  padding: 0;                
   height: auto;
   border-radius: 0;
   gap: 2.5rem;
 }
 
  
-/* light scroll border */
+
 [data-theme="light"] .navbar.scrolled {
   border-bottom: 1px solid rgba(0,0,0,0.12);
   background: var(--bg-light) !important;
 
 }
 
-/* dark scroll glow */
 [data-theme="dark"] .navbar.scrolled {
   border-bottom: 1px solid rgba(99,102,241,0.5);
   background: #11001f !important;
 }
 
-/* =============================
-   MOBILE MENU BUTTON
-============================= */
 .menu-btn {
   display: none;
   font-size: 2rem;
   cursor: pointer;
-  z-index: 300; /* above overlay */
+  z-index: 300; 
   transition: transform 0.3s ease;
 }
 
@@ -204,9 +184,7 @@ border: 1px solid rgba(255,255,255,0.14);
   transform: scale(1.1);
 }
 
-/* =============================
-   MOBILE MENU
-============================= */
+
 
 .mobile-overlay {
   position: fixed;
@@ -293,9 +271,7 @@ border: 1px solid rgba(255,255,255,0.14);
 }
 
 
-/* =============================
-   RESPONSIVE
-============================= */
+
 @media (max-width: 768px) {
   .navbar{
     height: 70px;
@@ -312,6 +288,6 @@ border: 1px solid rgba(255,255,255,0.14);
   }
 
   .contact-btn {
-    display: none; /* too crowded on mobile */
+    display: none; 
   }
 }
