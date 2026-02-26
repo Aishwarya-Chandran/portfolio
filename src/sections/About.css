@@ -1,0 +1,233 @@
+/* ================= THEME VARIABLES ================= */
+:root {
+  --bg: #0f001f;
+  --text: #fff;
+  --text-muted: #cfc6ff;
+  --card-bg: rgba(255,255,255,0.05);
+  --card-border: rgba(255,255,255,0.15);
+  --hover-glow: #b983ff;
+}
+
+[data-theme="light"] {
+  --bg: #fff;
+  --text: #111;
+  --text-muted: #666;
+  --card-bg: #f5f5f5;
+  --card-border: #ddd;
+  --hover-glow: #aaa;
+}
+
+/* ================= SECTION ================= */
+.about {
+  background: var(--bg);
+  color: var(--text);
+  padding: 6rem 8vw;
+}
+
+/* ================= HEADER ================= */
+.about-header {
+  text-align: center;
+  margin-bottom: 6rem; /* matches Vipul spacing */
+}
+
+.about-header span {
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.about-header h2 {
+  font-size: 48px;
+  font-weight: 500;
+  margin-top: 8px;
+  line-height: 1.2;
+}
+
+/* ================= GRID ================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* ================= IMAGE ================= */
+.about-image img {
+  width: 320px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+.about-image img:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0 18px var(--hover-glow), 0 6px 20px rgba(185, 131, 255, 0.3);
+}
+
+/* ================= RIGHT STACK ================= */
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.about-text {
+  max-width: 650px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* ================= CARDS ================= */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.about-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  padding: 1.6rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-card svg {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 12px;
+}
+
+.about-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.about-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Card hover (Vipul electric) */
+.about-card:hover {
+  transform: translateY(-8px);
+}
+
+[data-theme="dark"] .about-card:hover {
+  box-shadow:
+    0 0 8px var(--hover-glow),
+    0 6px 18px rgba(185, 131, 255, 0.25);
+}
+
+/* ================= TOOLS ================= */
+.tools h3 {
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+  gap: 1rem;
+}
+
+.tool-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.tool-card img {
+  width: 28px;
+  height: 28px;
+}
+
+.tool-card:hover {
+  transform: translateY(-6px);
+  [data-theme="dark"] & {
+    box-shadow: 0 0 10px var(--hover-glow);
+  }
+}
+
+/* ================= SCROLL ANIMATION (Vipul style) ================= */
+.appear {
+  opacity: 0;
+  transform: translateY(50px) scale(0.96);
+  animation: appear-vipul 0.8s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+@keyframes appear-vipul {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-image img {
+    width: 280px;
+    height: 360px;
+    margin: 0 auto;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 5rem 6vw;
+  }
+
+  .about-header h2 {
+    font-size: 36px;
+  }
+
+  .about-text {
+    font-size: 15px;
+  }
+
+  .about-card h4 {
+    font-size: 14px;
+  }
+
+  .about-card p {
+    font-size: 13px;
+  }
+
+  .tool-card {
+    height: 56px;
+  }
+
+  .tool-card img {
+    width: 24px;
+    height: 24px;
+  }
+}

@@ -1,0 +1,109 @@
+.education-section {
+  padding: 6rem 1.5rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.education-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  font-weight: 700;
+}
+
+/* GRID */
+.education-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* CARD */
+.education-card {
+  position: relative;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 18px;
+  border: 1px solid transparent;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  /* SCROLL ANIMATION */
+  animation: fadeUp both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 35%;
+}
+
+/* LIGHT MODE → SHADOW ONLY (NO BORDER) */
+.education-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* ICON */
+.edu-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  transition: transform 0.4s ease, background 0.4s ease;
+}
+
+.education-card:hover .edu-icon {
+  transform: rotate(8deg) scale(1.1);
+  background: var(--hover-color);
+}
+
+/* CONTENT */
+.edu-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.edu-institute {
+  display: block;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.edu-year {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+  color: var(--primary-color);
+}
+
+.edu-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* DARK MODE — BORDER + GLOW SHADOW */
+[data-theme="dark"] .education-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .education-card:hover {
+  box-shadow:
+    0 0 8px #b983ff,
+    0 6px 18px rgba(185, 131, 255, 0.25);
+}
+
+/* VIEW ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

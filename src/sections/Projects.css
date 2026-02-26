@@ -1,0 +1,178 @@
+.projects-section {
+  padding: 6rem 8%;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.projects-title {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  animation: fadeUp linear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 40%;
+}
+
+.projects-subtitle {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+  opacity: 0.8;
+  animation: fadeUp linear both;
+  animation-timeline: view();
+  animation-range: entry 30% cover 50%;
+}
+
+/* CATEGORY */
+.project-category {
+  margin-bottom: 5rem;
+}
+
+.category-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.category-title::after {
+  content: "";
+  width: 60%;
+  height: 3px;
+  background: var(--primary-color);
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+}
+
+/* GRID */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* CARD AS LINK */
+.project-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  animation: cardReveal linear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 45%;
+}
+
+.project-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGE */
+.project-image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.12);
+}
+
+/* CONTENT */
+.project-content {
+  padding: 1.4rem;
+}
+
+.project-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.project-content p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 1rem;
+}
+
+.project-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: letter-spacing 0.3s ease, color 0.3s ease;
+}
+
+.project-card:hover .project-link {
+  letter-spacing: 1px;
+  color: var(--hover-color);
+}
+
+/* VIEW ALL */
+.view-all-wrapper {
+  margin-top: 3rem;
+  text-align: center;
+  animation: fadeUp linear both;
+  animation-timeline: view();
+  animation-range: entry 30% cover 50%;
+}
+
+.view-all-btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  border-radius: 30px;
+  background: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.view-all-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 4rem 6%;
+  }
+
+  .projects-title {
+    font-size: 2.2rem;
+  }
+}

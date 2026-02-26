@@ -1,0 +1,317 @@
+/* =============================
+   BASE VARIABLES
+============================= */
+:root {
+  --primary: #6366f1;
+  --text-light: #0f172a;
+  --text-dark: #e5e7eb;
+  --bg-light: rgba(255,255,255,0.95);
+--bg-dark: rgba(15,23,42,0.92);
+
+}
+
+/* =============================
+   NAVBAR WRAPPER
+============================= */
+.navbar {
+  position: fixed;
+                
+  left: 0;
+ 
+  width: 100%;
+  height: 90px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  transition: all 0.35s ease;
+}
+
+/* inner alignment */
+.nav-inner {
+  width: 100%;
+   padding-top: 16px !important;
+  max-width: 1200px;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =============================
+   LOGO (OUTSIDE PILL)
+============================= */
+.logo {
+  font-family: "Sofia", sans-serif;
+  font-size: 2rem;
+  background: linear-gradient(120deg, #6366f1, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* =============================
+   CENTER NAV PILL
+============================= */
+.nav-pill {
+  display: flex;
+  align-items: center;
+  font-family: "Trirong", serif;
+  gap: 2.7rem;
+  padding: 0.6rem 2.2rem;
+  height: 48px;
+  border-radius: 999px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  list-style: none;
+  transition: all 0.35s ease;
+}
+
+/* LIGHT THEME */
+[data-theme="light"] .nav-pill {
+  background: transparent;   /* ✅ removed */
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+
+[data-theme="dark"] .nav-pill {
+  background: transparent;   /* ✅ removed */
+border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: none;
+}
+
+
+/* pill links */
+.nav-pill a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+[data-theme="dark"] .nav-pill a {
+  color: var(--text-dark);
+}
+
+/* =============================
+   RIGHT ACTIONS
+============================= */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  flex-shrink: 0;
+}
+
+/* theme toggle */
+.theme-toggle {
+  background: none !important;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.9rem;   
+  color: inherit;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+
+/* contact button */
+.contact-btn {
+  height: 50px;
+  width: 150px;
+  font-family: "Trirong", serif;
+  display: flex;              
+  align-items: center;       
+  justify-content: center;    
+  gap: 6px;   
+  border-radius: 999px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  transition: all 0.25s ease;
+}
+.contact-btn svg{
+    font-size: 1.5rem;
+}
+/* LIGHT THEME */
+[data-theme="light"] .contact-btn {
+  background: transparent;
+  color: var(--primary);
+}
+
+/* DARK THEME */
+[data-theme="dark"] .contact-btn {
+  background: rgba(99,102,241,0.15); /* soft primary tint */
+  color: #fff;
+  border-color: rgba(99,102,241,0.6);
+}
+.contact-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* =============================
+   SCROLL STATE
+============================= */
+/* REMOVE pill completely when scrolled */
+/* SCROLL STATE — remove pill look but keep content */
+.navbar.scrolled .nav-pill {
+  box-shadow: none !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 0;                /* important */
+  height: auto;
+  border-radius: 0;
+  gap: 2.5rem;
+}
+
+ 
+/* light scroll border */
+[data-theme="light"] .navbar.scrolled {
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+  background: var(--bg-light) !important;
+
+}
+
+/* dark scroll glow */
+[data-theme="dark"] .navbar.scrolled {
+  border-bottom: 1px solid rgba(99,102,241,0.5);
+  background: #11001f !important;
+}
+
+/* =============================
+   MOBILE MENU BUTTON
+============================= */
+.menu-btn {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 300; /* above overlay */
+  transition: transform 0.3s ease;
+}
+
+.menu-btn:hover {
+  transform: scale(1.1);
+}
+
+/* =============================
+   MOBILE MENU
+============================= */
+
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 200;
+}
+
+/* show overlay */
+.mobile-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-box {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 60%;
+  max-width: 200px;
+  background: var(--bg-light);
+  padding: 2rem;
+  transition: right 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+[data-theme="dark"] .mobile-box {
+  background: #11001f;
+}
+[data-theme="dark"] .mobile-box a {
+  color: var(--text-dark);
+}
+[data-theme="dark"] .mobile-header {
+  color: var(--text-dark);
+}
+
+.mobile-overlay.show .mobile-box {
+  right: 0;
+}
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-signature {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.close-btn {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+
+
+.mobile-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 3rem 0;
+}
+
+.mobile-box li {
+  margin: 1.5rem 0;
+}
+
+.mobile-box a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-light);
+  transition: color 0.2s ease;
+}
+
+.mobile-box a:hover {
+  color: var(--primary);
+}
+
+
+/* =============================
+   RESPONSIVE
+============================= */
+@media (max-width: 768px) {
+  .navbar{
+    height: 70px;
+  }
+  .nav-pill {
+    display: none;
+  }
+  .menu-btn {
+    display: block;
+     font-size: 1.8rem;
+  }
+  .nav-inner {
+    padding-top: 0 !important;
+  }
+
+  .contact-btn {
+    display: none; /* too crowded on mobile */
+  }
+}

@@ -1,0 +1,59 @@
+/* LIGHT THEME (unchanged, clean) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111827;
+  --primary-color: #2563eb;
+  --secondary-color: #1f2937;
+  --hover-color: #3b82f6;
+  --card-bg: #f3f4f6;
+}
+
+/* DARK THEME — EXACT INSPECTED LOOK */
+[data-theme="dark"] {
+  --bg-color: #11001f;          /* ← EXACT COLOR YOU SAW */
+  --text-color: #f9fafb;
+
+  /* Accent kept subtle */
+  --primary-color: #6366f1;     /* glow / hover */
+  --secondary-color: #d1d5db;
+  --hover-color: #818cf8;
+
+  --card-bg: #11001f;
+}
+
+/* GLOBAL */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  
+}
+
+/* BUTTONS */
+button {
+  background: transparent;
+  color: var(--text-color);
+  border: 1px solid rgba(99,102,241,0.35);
+  padding: 0.55rem 1.3rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  background-color: rgba(99,102,241,0.08);
+  border-color: var(--primary-color);
+}
+
+/* CARDS */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+

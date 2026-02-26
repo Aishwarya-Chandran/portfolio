@@ -1,0 +1,214 @@
+/* ===============================
+   SECTION
+================================ */
+.roadmap {
+  padding: 140px 20px;
+}
+
+.roadmap-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 120px;
+}
+
+/* ===============================
+   TIMELINE WRAPPER
+================================ */
+.timeline {
+  position: relative;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* CENTER GRADIENT LINE */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    #3b82f6,
+    #22c55e,
+    #a855f7,
+    #f97316
+  );
+}
+
+/* ===============================
+   ROW
+================================ */
+.timeline-row {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 120px;
+}
+
+.timeline-row.left {
+  justify-content: flex-start;
+}
+
+.timeline-row.right {
+  justify-content: flex-end;
+}
+
+/* ===============================
+   ICON ON TIMELINE
+================================ */
+.timeline-icon {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  z-index: 3;
+
+  box-shadow:
+    0 0 0 6px var(--bg-color, transparent),
+    0 0 22px rgba(255, 255, 255, 0.15);
+}
+
+/* ===============================
+   CARD
+================================ */
+.timeline-card {
+  width: 420px;
+  padding: 26px;
+  border-radius: 18px;
+  position: relative;
+  background: var(--card-bg, transparent);
+  border: 1px solid var(--border-color, rgba(0,0,0,0.18));
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  overflow: hidden;
+}
+
+/* TOP BORDER (ACCENT ONLY) */
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: var(--accent);
+  border-radius: 18px 18px 0 0;
+}
+
+/* ELECTRIC GLOW LAYER */
+.timeline-card::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: var(--accent);
+  opacity: 0;
+  filter: blur(20px);
+  transition: opacity 0.35s ease;
+  z-index: -1;
+}
+
+/* HOVER EFFECT */
+.timeline-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 35px 90px rgba(0,0,0,0.28),
+    0 0 40px rgba(255,255,255,0.12);
+}
+
+.timeline-card:hover::after {
+  opacity: 0.35;
+}
+
+/* ===============================
+   CARD TEXT
+================================ */
+.timeline-card h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.timeline-card .desc {
+  font-size: 14px;
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* ===============================
+   SKILLS
+================================ */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 999px;
+  border: 1px solid var(--border-color, rgba(0,0,0,0.25));
+  transition: all 0.25s ease;
+}
+
+/* THEME SAFE HOVER */
+.skill:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: transparent;
+}
+
+/* ===============================
+   SCROLL ANIMATION (PURE CSS)
+================================ */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll {
+  animation: reveal linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 35%;
+  animation-fill-mode: both;
+}
+
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 28px;
+  }
+
+  .timeline-row {
+    justify-content: flex-start !important;
+    padding-left: 80px;
+  }
+
+  .timeline-icon {
+    left: 28px;
+  }
+
+  .timeline-card {
+    width: 100%;
+  }
+}
