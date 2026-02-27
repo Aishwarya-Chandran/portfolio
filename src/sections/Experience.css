@@ -109,7 +109,8 @@
     box-shadow 0.25s ease;
 }
 
-.experience-knob:hover {
+.experience-knob:hover,
+.experience-knob:active {
   transform: translate(-50%, -50%) scale(1.15);
   box-shadow: 0 0 16px var(--knob-glow);
 }
@@ -219,4 +220,45 @@
 .skills span:hover {
  
   transform: translateY(-2px);
+}
+
+
+@media (max-width: 768px) {
+  .exp-timeline::before {
+    left: 20px;
+    top: 0;
+    height: 100%;
+  }
+
+  .exp-row {
+    position: relative !important;
+    width: 100%;
+    transform: none !important;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .exp-year {
+    position: relative !important;
+    text-align: left !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .exp-card {
+    position: relative !important;
+    width: 95%;
+    left: 0 !important;
+    transform: none !important;
+    margin-left: 40px;
+  }
+
+  .experience-knob {
+    position: absolute;
+    left: 20px;
+    transform: translate(-50%, -50%);
+  }
 }
