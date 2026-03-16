@@ -44,7 +44,7 @@ const Hero = () => {
           <a href="mailto:aishwaryachandran4614@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Aishwarya,%0AI%20saw%20your%20portfolio..." className="btn btn-primary">
             Contact me <HiArrowRight />
           </a>
-          <a href="/public/assets/Aishwarya_Chandran Resume .pdf" download className="btn btn-secondary">
+          <a href="/src/assets/Aishwarya_Chandran Resume .pdf" download className="btn btn-secondary">
             My Resume <FiDownload/>
           </a>
         </div>
