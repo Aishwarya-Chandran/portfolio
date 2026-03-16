@@ -3,7 +3,7 @@ import "./Hero.css";
 import round from "../assets/round.jpeg";
 import { HiArrowRight } from "react-icons/hi2";
 import { FiDownload } from "react-icons/fi";
-
+import  resumePDF from  "../assets/Aishwarya_Chandran_Resume.pdf"
 const Hero = () => {
   const heroRef = useRef(null);
   const [show, setShow] = useState(false);
@@ -44,7 +44,7 @@ const Hero = () => {
           <a href="mailto:aishwaryachandran4614@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Aishwarya,%0AI%20saw%20your%20portfolio..." className="btn btn-primary">
             Contact me <HiArrowRight />
           </a>
-          <a href="/src/assets/Aishwarya_Chandran_Resume.pdf" download className="btn btn-secondary">
+          <a href={resumePDF} download className="btn btn-secondary">
             My Resume <FiDownload/>
           </a>
         </div>
