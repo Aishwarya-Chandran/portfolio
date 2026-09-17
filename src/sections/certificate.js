@@ -11,6 +11,7 @@ import alphaPdf from "../assets/certificates/alpha.pdf";
 import teachnookPdf from "../assets/certificates/teachnook.pdf";
 import skolePdf from "../assets/certificates/Skole eductions (1).pdf";
 import codingPdf from "../assets/certificates/coding.pdf";
+import upskill from "../assets/certificates/upskill.png"
 
 const certificates = [
   {
@@ -38,23 +39,31 @@ const certificates = [
     id: 4,
     title: "",
     org: "",
+    image: upskill,
+    link: upskill,
+  },
+  {
+    id: 5,
+    title: "",
+    org: "",
     image: skoleImg,
     link: skolePdf,
   },
   {
-    id: 5,
+    id: 6,
     title: "",
     org: "",
     image: cloudImg,
     link: cloudImg,
   },
   {
-    id: 6,
+    id: 7,
     title: "",
     org: "",
     image: codeImg,
     link: codingPdf,
   },
+  
 ];
 
 export default certificates;
