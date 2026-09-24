@@ -6,13 +6,15 @@ import About from "./sections/About";
 import Certificates from "./sections/Certificates";
 import Contact from "./sections/Contact";
 import Education from "./sections/Education";
-import Experience from "./sections/Experience";
+
 import Footer from "./sections/Footer";
 
 
 
 import Hero from "./sections/Hero";
 import MySkills from "./sections/MySkills";
+import Projects from "./sections/Projects";
+
 
 
 
@@ -27,10 +29,11 @@ export default function App() {
       
       <Hero/>
        <About/>
-       <Experience/>
+       
        <Education/>
        
        <MySkills/>
+       <Projects/>
       
        <Certificates/>
        <Contact/>

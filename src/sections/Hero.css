@@ -40,19 +40,18 @@
   max-width: 900px;
 }
 
-/* 🔴 REQUIRED INITIAL STATE (THIS MAKES SCROLL WORK) */
+
 .hero-content > * {
   opacity: 0;
   transform: translateY(40px);
   will-change: opacity, transform;
 }
 
-/* SHOW STATE */
+
 .hero-content.show > * {
   animation: fadeUp 0.8s ease-out forwards;
 }
 
-/* STAGGER DELAYS (one by one like video) */
 .hero-content.show img {
   animation-delay: 0.1s;
 }

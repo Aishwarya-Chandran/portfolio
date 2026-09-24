@@ -7,12 +7,11 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-inner">
-        {/* Left */}
+      
         <p className="footer-text">
           © Aishwarya Chandran — All rights reserved
         </p>
 
-        {/* Right */}
         <div className="footer-icons">
           <a href="https://github.com/Aishwarya-Chandran" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <FaGithub />
